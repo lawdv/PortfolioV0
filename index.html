@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="widht=device-width, initial-scale=1.0">
+    <title>Javier - Desarrollador Fullstack </title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- SEO -->
+    <meta name="description"
+        content="Portfolio de Javier, esarrollador Fullstack apasionado por crear apliaciones y automatizar procesos">
+    <meta name="keywords" content="desarrollador fullstack, portfolio, React, Node.js, asp.net, css, html, python">
+</head>
+
+<body>
+    <!-- Botón de cambio de tema -->
+    <button id="theme-toggle" class="theme-toggle">
+        <i class="fas fa-sun"></i>
+    </button>
+    <!-- Barra de navegacion -->
+    <nav class="navbar">
+        <div class="logo">Javier <i class="fa-solid fa-user-tie"></i> </div>
+        <ul class="nav-links">
+            <li><a href="#home">Inicio</a></li>
+            <li><a href="#proyectos">Proyectos</a></li>
+            <li><a href="#sobre-mi">Sobre Mi</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+        </ul>
+    </nav>
+
+
+    <!-- Hero section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Hola, Soy Javier</h1>
+            <p>Desarrollador Fullstack apasionado por crear apliaciones y automatizar procesos</p>
+            <a href="#proyectos" class="cta-button">Ver Mis Proyectos</a>
+            <a href="https://www.linkedin.com/in/javiercorteslawdv/" class="cta-button" target="_blank"
+                rel="noopener noreferrer">Linkedin
+                <i class="fa-brands fa-linkedin"></i></a>
+        </div>
+    </section>
+
+    <!-- Sección de Proyectos -->
+    <section id="proyectos" class="proyectos">
+        <h2>Mis Proyectos</h2>
+        <p>Explora algunos de mis trabajos como desarrollador fullstack.</p>
+        <div class="proyectos-grid">
+            <!-- Proyecto 1: Todo List -->
+            <div class="proyecto-card">
+                <!-- <img src="https://via.placeholder.com/300x200?text=Todo+List" alt="Todo List App"> -->
+                <h3>Todo List con SQL Server</h3>
+                <p>Aplicación web para gestionar tareas, con un backend en SQL Server para almacenar y organizar listas
+                    de tareas de forma eficiente.</p>
+                <div class="proyecto-links">
+                    <a href="#" class="cta-button">Ver Demo</a>
+                    <a href="#" class="cta-button secondary">Código</a>
+                </div>
+            </div>
+            <!-- Proyecto 2: Sitio Web Turístico -->
+            <div class="proyecto-card">
+                <img src="img/SitioWeb1.png" alt="Sitio Web Turístico">
+                <h3>Sitio Web Turístico</h3>
+                <p>Sitio web responsivo que promociona servicios turísticos, con diseño moderno y funciones interactivas
+                    como mapa del lugar.</p>
+                <div class="proyecto-links">
+                    <a href="https://ecocucubo.com.co/" class="cta-button" target="_blank" rel="noopener noreferrer">Ver
+                        Sitio</a>
+
+                </div>
+            </div>
+            <!-- Proyecto 3: Juego basico -->
+            <div class="proyecto-card">
+                <img src="img/Game1.png" alt="Juego en Unity 3D">
+                <h3>Unity 3D - ObstacleCoeur v.1</h3>
+                <p>A y D en teclado (izquierda para mover a la izquierda, derecha para mover a la derecha), esquiva
+                    obstáculos y demuestra quién tiene más habilidad.</p>
+                <div class="proyecto-links">
+                    <a href="https://lnkd.in/eFkzfptS" class="cta-button" target="_blank"
+                        rel="noopener noreferrer">Jugar <i class="fa-solid fa-gamepad"></i></a>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sobre mi -->
+    <section id="sobre-mi" class="hero">
+        <div class="hero-content">
+            <h1>Sobre Mi</h1>
+            <p>Soy un desarrollador fullstack apasionado por la tecnología con más de 3 años de experiencia en el
+                desarrollo de soluciones innovadoras. He trabajado en proyectos de automatización de procesos,
+                formularios dinámicos y sitios web, utilizando tecnologías como Python, C#, WinForms, ASP.NET Core y
+                .NET Framework. He creado más de 20 aplicaciones que optimizan procesos imgnte web scraping y
+                automatización de tareas, mejorando la eficiencia operativa. Además, participé en el Premio Innova 2022
+                en Colombia junto a GlobalNews Group Colombia S.A.S., destacando mi capacidad para contribuir a
+                proyectos de alto impacto.</p>
+            <div class="proyecto-links">
+                <a href="https://www.premioinnova.gov.co/premio_innova_2022.php" class="cta-button" target="_blank"
+                    rel="noopener noreferrer">Premio Innova</a>
+            </div>
+
+        </div>
+    </section>
+    <!-- Sección de Contacto -->
+    <section id="contacto" class="contacto">
+        <h2>Contáctame</h2>
+        <p>¿Tienes un proyecto en mente? ¡Hablemos!</p>
+        <form id="contact-form" action="https://formspree.io/f/xoveglyz" method="POST">
+            <div class="form-group">
+                <label for="nombre">Nombre</label>
+                <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Correo Electrónico</label>
+                <input type="email" id="email" name="email" placeholder="tu@correo.com" required>
+            </div>
+            <div class="form-group">
+                <label for="mensaje">Mensaje</label>
+                <textarea id="mensaje" name="mensaje" placeholder="Cuéntame sobre tu proyecto..." required></textarea>
+            </div>
+            <button type="submit" class="cta-button">Enviar Mensaje <i class="fa-solid fa-envelope"></i></button>
+        </form>
+        <div id="modal" class="modal">
+            <div class="modal-content">
+                <span id="modal-close" class="modal-close">&times;</span>
+                <h3 id="modal-title"></h3>
+                <p id="modal-message"></p>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
