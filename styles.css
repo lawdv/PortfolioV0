@@ -233,3 +233,10 @@ h2 { margin: 0; font-size: clamp(31px, 4vw, 45px); letter-spacing: -.06em; line-
   *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
   [data-reveal] { opacity: 1; transform: none; }
 }
+
+/* Two explicit actions on the drone project card */
+.project-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 0 20px; }
+.project-actions .text-link { margin-top: 20px; }
+.project-actions .secondary-link { color: var(--muted); }
+.project-actions .secondary-link:hover { color: var(--accent); }
+@media (max-width: 720px) { .project-actions { gap: 0 14px; } }
