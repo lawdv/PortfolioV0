@@ -177,6 +177,22 @@
 #activity2-content .a2-kicker{font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--a2-muted);font-weight:800}
 #activity2-content .a2-num{color:var(--a2-yellow);font-family:ui-monospace,SFMono-Regular,Consolas,monospace;font-variant-numeric:tabular-nums}
 #activity2-content .a2-toolbar{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-bottom:16px}
+
+#activity2-content .a2-visual-card{margin:0 0 16px;overflow:hidden}
+#activity2-content .a2-visual-head{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:12px}
+#activity2-content .a2-visual-title{font-weight:850;font-size:17px;margin:0}
+#activity2-content .a2-visual-subtitle{color:var(--a2-muted);font-size:12px;line-height:1.5;margin-top:4px}
+#activity2-content .a2-visual-actions{display:flex;gap:7px;flex-wrap:wrap}
+#activity2-content .a2-visual-stage{border:1px solid #30303b;border-radius:10px;overflow:hidden;background:#11131b}
+#activity2-content .a2-visual-stage svg{display:block;width:100%;height:auto;min-height:150px}
+#activity2-content .a2-visual-readouts{display:flex;flex-wrap:wrap;gap:8px 18px;padding:11px 12px;background:#191920;border-top:1px solid #30303b;color:#c5c5cf;font-size:12px}
+#activity2-content .a2-visual-readouts strong{font-family:ui-monospace,SFMono-Regular,Consolas,monospace;color:#ffd84d}
+#activity2-content .a2-visual-status{margin-top:10px;padding:10px 12px;border:1px solid #383844;border-radius:8px;background:#202027;color:#e2e2e9;font-size:12px;line-height:1.5}
+#activity2-content .a2-visual-status.good{border-color:#2f785b;background:#16251f}
+#activity2-content .a2-visual-status.warn{border-color:#8a6d2c;background:#292316}
+#activity2-content .a2-visual-status.bad{border-color:#854343;background:#2a1919}
+#activity2-content .a2-run-btn{background:var(--a2-yellow)!important;color:#171717!important;border-color:var(--a2-yellow)!important}
+
 #activity2-content button,#activity2-content select,#activity2-content input{font:inherit}
 #activity2-content .a2-btn{border:1px solid #444450;border-radius:8px;padding:9px 12px;color:#f3f3f6;background:#282831;font-size:12px;font-weight:750;transition:background .15s,border-color .15s,transform .15s;cursor:pointer}
 #activity2-content .a2-btn:hover{background:#33333e;border-color:#666675}
@@ -265,6 +281,67 @@
     <button type="button" class="a2-btn" data-a2-preset="turn">05 · Giro inclinado</button>
     <button type="button" class="a2-btn" id="a2-reset">Restablecer</button>
   </div>
+
+  
+  <article class="a2-card a2-visual-card" aria-labelledby="a2-visual-title">
+    <div class="a2-visual-head">
+      <div>
+        <h2 id="a2-visual-title" class="a2-visual-title">Simulación visual del dron</h2>
+        <p class="a2-visual-subtitle">Carga un ensayo arriba para ver una representación animada del resultado. El movimiento se acelera visualmente para que puedas observarlo en pocos segundos.</p>
+      </div>
+      <div class="a2-visual-actions">
+        <button type="button" class="a2-btn a2-run-btn" id="a2-run-visual">▶ Ejecutar simulación</button>
+        <button type="button" class="a2-btn" id="a2-reset-visual">↺ Reiniciar</button>
+      </div>
+    </div>
+    <div class="a2-visual-stage">
+      <svg id="a2-visual-svg" viewBox="0 0 800 235" role="img" aria-label="Animación 2D de un dron que despega y realiza una entrega">
+        <defs>
+          <linearGradient id="a2-sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#171d2b"/><stop offset="1" stop-color="#22232c"/></linearGradient>
+          <marker id="a2-route-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#ffc300"/></marker>
+        </defs>
+        <rect width="800" height="235" fill="url(#a2-sky)"/>
+        <g stroke="#343744" stroke-width="1" opacity=".7">
+          <path d="M0 40H800 M0 80H800 M0 120H800 M0 160H800 M80 0V195 M160 0V195 M240 0V195 M320 0V195 M400 0V195 M480 0V195 M560 0V195 M640 0V195 M720 0V195"/>
+        </g>
+        <path d="M0 195H800" stroke="#74806c" stroke-width="3"/>
+        <path d="M0 200H800" stroke="#323b35" stroke-width="7"/>
+        <g opacity=".9">
+          <rect x="48" y="177" width="92" height="18" rx="3" fill="#39404a" stroke="#727a88"/>
+          <path d="M61 177V169H75V177 M111 177V169H125V177" fill="none" stroke="#858b98" stroke-width="3"/>
+          <text x="94" y="216" fill="#adb6c7" font-size="10" text-anchor="middle" font-family="monospace">BASE</text>
+          <rect x="681" y="112" width="66" height="83" rx="5" fill="#303743" stroke="#6b7483"/>
+          <rect x="693" y="126" width="42" height="22" rx="2" fill="#4c5665"/>
+          <rect x="702" y="153" width="24" height="29" rx="3" fill="#ffc300"/>
+          <text x="714" y="105" fill="#edf0f8" font-size="11" text-anchor="middle" font-family="monospace">ENTREGA</text>
+        </g>
+        <path id="a2-visual-route" d="M120 172 C260 80 490 80 682 125" fill="none" stroke="#ffc300" stroke-width="2" stroke-dasharray="6 7" opacity=".7" marker-end="url(#a2-route-arrow)"/>
+        <g id="a2-drone-visual" transform="translate(105 175)">
+          <g stroke="#9aa4b8" stroke-width="4" stroke-linecap="round">
+            <path d="M-22 -3L-36 -12 M22 -3L36 -12"/>
+            <path d="M-17 7L-24 15 M17 7L24 15"/>
+          </g>
+          <g fill="#252d3a" stroke="#aeb8cc" stroke-width="2">
+            <ellipse cx="-36" cy="-13" rx="12" ry="4"/>
+            <ellipse cx="36" cy="-13" rx="12" ry="4"/>
+            <rect x="-20" y="-9" width="40" height="18" rx="5"/>
+            <path d="M-12 9L-15 17H-6 M12 9L15 17H6" fill="none" stroke-linecap="round"/>
+          </g>
+          <rect x="-7" y="-5" width="14" height="10" rx="2" fill="#ffc300"/>
+          <circle cx="0" cy="-1" r="2" fill="#18202a"/>
+          <rect x="-7" y="12" width="14" height="12" rx="2" fill="#c8d6e8" stroke="#738096" stroke-width="1"/>
+        </g>
+        <text x="18" y="22" fill="#dbe2f1" font-size="11" font-family="monospace">VISTA LATERAL · MODELO DIDÁCTICO</text>
+        <text id="a2-visual-position-label" x="398" y="22" fill="#ffc300" font-size="11" text-anchor="middle" font-family="monospace">DRON EN ESPERA</text>
+      </svg>
+      <div class="a2-visual-readouts">
+        <span>Altura visual: <strong id="a2-visual-altitude">0,0 m</strong></span>
+        <span>Aceleración vertical: <strong id="a2-visual-acceleration">0,00 m/s²</strong></span>
+        <span>Estado: <strong id="a2-visual-motion">En espera</strong></span>
+      </div>
+    </div>
+    <div id="a2-visual-status" class="a2-visual-status">Selecciona «02 · Despegue» para observar el ascenso; si la fuerza neta no supera el peso, el dron permanecerá en tierra.</div>
+  </article>
 
   <div class="a2-layout">
     <div class="a2-stack">
@@ -454,6 +531,10 @@
  const g = 9.81;
  const records = [];
  let currentPreset = 'Configuración manual';
+ let visualFrame = null;
+ let visualRunning = false;
+ let visualStartedAt = 0;
+ let visualLast = null;
  const fmt = (n, d=2) => Number.isFinite(n) ? n.toLocaleString('es-CO',{minimumFractionDigits:d,maximumFractionDigits:d}) : '—';
  const num = id => Number($(id).value);
  const stateLabels = {ground:'En el suelo',air:'En el aire'};
@@ -580,6 +661,7 @@
    if(!Number.isFinite(c.routeTime)) motionNote.textContent='Con la fuerza horizontal resultante actual, el dron se detiene antes de alcanzar la distancia objetivo. Reduce el arrastre o aumenta la componente horizontal de empuje.';
    else motionNote.textContent='Tiempo de ruta calculado con d = v₀t + ½aₓt². Para un giro nivelado, θ ideal = arctan(v²/rg) = '+fmt(c.requiredTurnAngle,1)+'°; el empuje requerido sería '+fmt(c.requiredTotalThrust)+' N. Componente radial disponible: '+fmt(c.thrustHorizontal)+' N; necesaria: '+fmt(c.centripetalF)+' N.';
    updateDiagram(c);
+   paintVisual(c);
    return c;
  }
  function setValues(values){Object.entries(values).forEach(([id,value])=>{if($(id))$(id).value=String(value)});}
@@ -591,17 +673,113 @@
    turn:{label:'Giro inclinado · θ teórico',values:{'a2-md':2,'a2-mp':0.5,'a2-thrust':25.31,'a2-angle':14.3,'a2-drag':0,'a2-state':'air','a2-control-mode':'thrust','a2-distance':100,'a2-speed':5,'a2-radius':10}}
  };
  document.querySelectorAll('[data-a2-preset]').forEach(btn=>btn.addEventListener('click',()=>{
-   const p=presets[btn.dataset.a2Preset];if(!p)return;setValues(p.values);currentPreset=p.label;update();
-   $('a2-test-name').value=p.label;
+   const p=presets[btn.dataset.a2Preset];if(!p)return;
+   stopVisual();setValues(p.values);currentPreset=p.label;
+   const c=update();$('a2-test-name').value=p.label;
+   startVisualAnimation(c);
  }));
  ['a2-md','a2-mp','a2-thrust','a2-angle','a2-drag','a2-state','a2-control-mode','a2-target-net','a2-distance','a2-speed','a2-height','a2-radius'].forEach(id=>{
-   $(id).addEventListener('input',()=>{currentPreset='Configuración manual';update();});
-   $(id).addEventListener('change',update);
+   $(id).addEventListener('input',()=>{stopVisual();currentPreset='Configuración manual';resetVisualPosition();update();});
+   $(id).addEventListener('change',()=>{stopVisual();resetVisualPosition();update();});
  });
  $('a2-reset').addEventListener('click',()=>{
    setValues({'a2-md':2,'a2-mp':0.5,'a2-thrust':30,'a2-angle':0,'a2-drag':0,'a2-state':'air','a2-control-mode':'thrust','a2-target-net':5.475,'a2-distance':100,'a2-speed':5,'a2-height':20,'a2-radius':10});
-   currentPreset='Configuración inicial';$('a2-test-name').value='';update();
+   stopVisual();currentPreset='Configuración inicial';$('a2-test-name').value='';resetVisualPosition();update();
  });
+
+ function setVisualStatus(message, tone=''){
+   const el=$('a2-visual-status');if(!el)return;
+   el.className='a2-visual-status'+(tone?' '+tone:'');el.textContent=message;
+ }
+ function resetVisualPosition(hover=false){
+   const drone=$('a2-drone-visual');if(!drone)return;
+   drone.setAttribute('transform',hover?'translate(105 145)':'translate(105 175)');
+   $('a2-visual-altitude').textContent=hover?'8,0 m':'0,0 m';
+   $('a2-visual-motion').textContent=hover?'En equilibrio':'En espera';
+   $('a2-visual-position-label').textContent=hover?'ALTURA CONSTANTE':'DRON EN ESPERA';
+ }
+ function stopVisual(){
+   if(visualFrame!==null){cancelAnimationFrame(visualFrame);visualFrame=null;}
+   visualRunning=false;
+ }
+ function paintVisual(c){
+   $('a2-visual-acceleration').textContent=fmt(c.acceleration)+' m/s²';
+   if(visualRunning)return;
+   if(c.state==='ground' && (c.net<=0 || c.landed)){
+     resetVisualPosition();
+     $('a2-visual-motion').textContent='Sin despegue';
+     setVisualStatus('El empuje vertical no supera al peso. La animación permanece en la base, coherente con el resultado calculado.','warn');
+   }else if(Math.abs(c.net)<=0.005){
+     resetVisualPosition(true);
+     setVisualStatus('Equilibrio: la fuerza neta vertical es cero. El dron se mantiene a altura constante; no hay aceleración vertical.','good');
+   }else if(c.net<0){
+     resetVisualPosition(true);
+     $('a2-visual-motion').textContent='Descenso';
+     $('a2-visual-position-label').textContent='ACELERACIÓN HACIA ABAJO';
+     setVisualStatus('El peso supera a la componente vertical del empuje. El modelo predice aceleración hacia abajo.','bad');
+   }else{
+     resetVisualPosition();
+     setVisualStatus('Configuración lista. Pulsa «Ejecutar simulación» para ver el ascenso y el recorrido del dron.','good');
+   }
+ }
+ function startVisualAnimation(c){
+   stopVisual();visualLast=c;visualRunning=true;visualStartedAt=performance.now();
+   const drone=$('a2-drone-visual');
+   const status=$('a2-visual-status');
+   const stage=$('a2-visual-position-label');
+   $('a2-visual-motion').textContent='Simulando';
+   status.className='a2-visual-status good';
+   if(c.state==='ground' && (c.net<=0 || c.landed)){
+     resetVisualPosition();visualRunning=false;
+     $('a2-visual-motion').textContent='No despega';
+     setVisualStatus('El dron no despega: el empuje vertical es inferior al peso. Cambia la masa o aumenta el empuje para probar otra condición.','warn');
+     return;
+   }
+   if(c.net<0){
+     drone.setAttribute('transform','translate(105 128)');
+     setVisualStatus('El dron parte en altura y desciende porque la fuerza neta vertical apunta hacia abajo.','bad');
+   }else if(Math.abs(c.net)<=0.005){
+     resetVisualPosition(true);visualRunning=false;
+     $('a2-visual-motion').textContent='En equilibrio';
+     $('a2-visual-position-label').textContent='ALTURA CONSTANTE';
+     setVisualStatus('Sin aceleración vertical: el dron conserva la altura representada.','good');
+     return;
+   }
+   const duration=3600;
+   const groundY=175;
+   const ascentPixels=Math.max(12,Math.min(82,c.height*3.8));
+   const isTurn=(currentPreset||'').toLowerCase().includes('giro');
+   const frame=(now)=>{
+     const p=Math.min(1,(now-visualStartedAt)/duration);
+     let x=105,y=groundY,altitude=0;
+     if(c.net<0){
+       y=128+(groundY-128)*p;altitude=Math.max(0,(groundY-y)/3.8);
+     }else{
+       const climb=Math.min(1,p/0.38);
+       altitude=(ascentPixels/3.8)*climb;
+       y=groundY-ascentPixels*climb;
+       if(p>0.38){
+         const horizontal=(p-0.38)/0.62;
+         x=105+575*horizontal;
+         if(isTurn)y-=Math.sin(horizontal*Math.PI)*13;
+       }
+     }
+     drone.setAttribute('transform','translate('+x.toFixed(1)+' '+y.toFixed(1)+')');
+     $('a2-visual-altitude').textContent=fmt(altitude,1)+' m';
+     $('a2-visual-motion').textContent=p<0.38?(c.net<0?'Descendiendo':'Ascendiendo'):(p<1?(isTurn?'Realizando giro':'En ruta'):'Entrega completada');
+     stage.textContent=p<0.38?(c.net<0?'DESCENSO':'DESPEGUE'):(p<1?(isTurn?'GIRO EN RUTA':'TRAYECTO A DESTINO'):'ENTREGA COMPLETADA');
+     if(p<1){
+       visualFrame=requestAnimationFrame(frame);
+     }else{
+       visualFrame=null;visualRunning=false;
+       setVisualStatus(c.net<0?'El dron ha descendido en la animación. La fuerza neta vertical es negativa.':'Animación terminada. La ruta visual es esquemática; los valores físicos del panel se calculan con las ecuaciones mostradas en el laboratorio.','good');
+     }
+   };
+   visualFrame=requestAnimationFrame(frame);
+ }
+ $('a2-run-visual').addEventListener('click',()=>startVisualAnimation(update()));
+ $('a2-reset-visual').addEventListener('click',()=>{stopVisual();resetVisualPosition();update();setVisualStatus('Animación reiniciada. Selecciona un ensayo o ejecuta la configuración actual.');});
+
  function appendCell(row, value){const td=document.createElement('td');td.textContent=String(value);row.appendChild(td);}
  function renderRecords(){
    const body=$('a2-results-body');body.replaceChildren();
