@@ -1,173 +1,294 @@
-<!DOCTYPE html>
-<html>
-
+<!doctype html>
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="widht=device-width, initial-scale=1.0">
-    <title>Javier - Desarrollador Fullstack </title>
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <!-- SEO -->
-    <meta name="description"
-        content="Portfolio de Javier, esarrollador Fullstack apasionado por crear apliaciones y automatizar procesos">
-    <meta name="keywords" content="desarrollador fullstack, portfolio, React, Node.js, asp.net, css, html, python">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b1020">
+  <meta name="description" content="Portafolio de Javier: desarrollo de software, automatización de procesos y videojuegos indie creados por IXKiraIX.">
+  <meta name="keywords" content="desarrollador fullstack, C#, .NET, JavaScript, HTML, CSS, automatización, Unity, juegos indie">
+  <meta property="og:title" content="Javier | Software & Indie Games">
+  <meta property="og:description" content="Aplicaciones, experimentos interactivos y videojuegos indie creados desde Colombia.">
+  <meta property="og:type" content="website">
+  <title>Javier / lawdv — Software & Indie Games</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
-    <!-- Botón de cambio de tema -->
-    <button id="theme-toggle" class="theme-toggle">
-        <i class="fas fa-sun"></i>
-    </button>
-    <!-- Barra de navegacion -->
-    <nav class="navbar">
-        <div class="logo">Lawdv </div>
-        <ul class="nav-links">
-            <li><a href="#home">Inicio</a></li>
-            <li><a href="#proyectos">Proyectos</a></li>
-            <li><a href="#sobre-mi">Sobre Mi</a></li>
-            <li><a href="#contacto">Contacto</a></li>
-        </ul>
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+  <div class="scroll-progress" aria-hidden="true"><span id="scroll-progress"></span></div>
+
+  <header class="site-header">
+    <nav class="nav container" aria-label="Navegación principal">
+      <a class="brand" href="#inicio" aria-label="lawdv, ir al inicio">
+        <span class="brand-mark">L<span>.</span></span>
+        <span class="brand-name">lawdv<span class="brand-slash">/</span>dev</span>
+      </a>
+      <button class="menu-toggle" id="menu-toggle" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav-links">
+        <span></span><span></span>
+      </button>
+      <div class="nav-links" id="nav-links">
+        <a href="#proyectos">Proyectos</a>
+        <a href="#juegos">Juegos indie</a>
+        <a href="#sobre-mi">Sobre mí</a>
+        <a href="#contacto">Contacto</a>
+        <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Cambiar tema" title="Cambiar tema">
+          <span class="theme-icon" aria-hidden="true">☼</span>
+        </button>
+      </div>
     </nav>
+  </header>
 
-
-    <!-- Hero section -->
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <h1>Hola, Soy Javier</h1>
-            <p>Desarrollador Fullstack apasionado por crear apliaciones y automatizar procesos</p>
-            <a href="#proyectos" class="cta-button">Ver Mis Proyectos</a>
-            <a href="https://www.linkedin.com/in/javiercorteslawdv/" class="cta-button" target="_blank"
-                rel="noopener noreferrer">Linkedin
-                <i class="fa-brands fa-linkedin"></i></a>
+  <main id="contenido">
+    <section class="hero section-pad" id="inicio">
+      <div class="hero-grid container">
+        <div class="hero-copy" data-reveal>
+          <p class="eyebrow"><span class="status-dot"></span> SOFTWARE · AUTOMATIZACIÓN · VIDEOJUEGOS</p>
+          <h1>Ideas que se convierten<br>en <span class="gradient-text">cosas reales.</span></h1>
+          <p class="hero-lead">Soy Javier, desarrollador de software. Me gusta construir herramientas útiles, automatizar tareas y crear pequeños mundos interactivos a través de videojuegos.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#proyectos">Ver proyectos <span aria-hidden="true">↘</span></a>
+            <a class="btn btn-quiet" href="#juegos">Explorar mis juegos <span aria-hidden="true">↗</span></a>
+          </div>
+          <div class="hero-footnote"><span class="mono">BOGOTÁ, COLOMBIA</span><span class="footnote-line"></span><span>Desarrollo web y creación indie</span></div>
         </div>
+
+        <div class="hero-visual" data-reveal data-reveal-delay="120" aria-label="Ilustración abstracta de código, planetas y órbitas">
+          <div class="visual-grid"></div>
+          <div class="visual-orbit orbit-one"></div>
+          <div class="visual-orbit orbit-two"></div>
+          <div class="visual-orbit orbit-three"></div>
+          <div class="visual-core"><span class="core-symbol">&lt;/&gt;</span><span class="core-caption">MAKE · PLAY · ITERATE</span></div>
+          <div class="float-card float-card-top"><span class="float-icon violet">{ }</span><span><b>Software</b><small>Web · APIs · Datos</small></span></div>
+          <div class="float-card float-card-bottom"><span class="float-icon mint">✳</span><span><b>Game Dev</b><small>Ideas jugables</small></span></div>
+          <span class="visual-star star-a">✳</span><span class="visual-star star-b">·</span><span class="visual-star star-c">+</span>
+          <span class="visual-label mono">BUILD / 001</span>
+        </div>
+      </div>
+      <div class="hero-divider container"><span></span><span class="mono">CÓDIGO CON PROPÓSITO, JUEGOS CON PERSONALIDAD</span><span></span></div>
     </section>
 
-    <!-- Sección de Proyectos -->
-    <section id="proyectos" class="proyectos">
-        <h2>Mis Proyectos</h2>
-        <p>Explora algunos de mis trabajos como desarrollador fullstack.</p>
-        <div class="proyectos-grid">
-            <div class="proyecto-card">
-
-                <img src="img/fullstack.png" alt="Fullstack CRUD" style="width: 100%; height: auto;">
-                <p>Aplicación web con Prisma, typescript, next.js para gestionar noticias, editar, realizar peticiones
-                    filtrar y buscar</p>
-                <p><strong>Frontend</strong>: Desarrollado con Next.js. Se usó Tailwind CSS para estilos
-
-                    <strong>Backend</strong>: Construido con Node.js y Express. Conexión a base de datos PostgresSQL,
-                    prisma
-                </p>
-                <!-- <div class="proyecto-links">
-                    <a href="#" class="cta-button">Ver Demo</a>
-                    <a href="#" class="cta-button secondary">Código</a>
-                </div> -->
-            </div>
-            <div class="proyecto-card">
-                <img src="img/Todo.png" alt="Todo List App">
-                <h3>Todo List con SQL Server como base de datos</h3>
-                <p>Aplicación web para gestionar tareas, con un backend en SQL Server para almacenar y organizar listas
-                    de tareas de forma eficiente.</p>
-                <p><strong>Frontend</strong>: Desarrollado con React 19 y Next.js. Se usó Tailwind CSS para estilos y
-                    Socket.IO para comunicación en tiempo real. Incluye íconos con FontAwesome.
-
-                    <strong>Backend</strong>: Construido con Node.js y Express. Conexión a base de datos MSSQL, uso de
-                    dotenv para variables de entorno, y comunicación en tiempo real con Socket.IO
-                </p>
-                <!-- <div class="proyecto-links">
-                    <a href="#" class="cta-button">Ver Demo</a>
-                    <a href="#" class="cta-button secondary">Código</a>
-                </div> -->
-            </div>
-            <!-- Proyecto 2: Sitio Web Turístico -->
-            <div class="proyecto-card">
-                <img src="img/SitioWeb1.png" alt="Sitio Web Turístico">
-                <h3>Sitio Web Turístico</h3>
-                <p>Sitio web responsivo que promociona servicios turísticos, con diseño moderno y funciones interactivas
-                    como mapa del lugar.</p>
-                <div class="proyecto-links">
-                    <a href="https://ecocucubo.com.co/" class="cta-button" target="_blank" rel="noopener noreferrer">Ver
-                        Sitio</a>
-
-                </div>
-            </div>
-            <!-- Proyecto 3: Juego basico -->
-            <div class="proyecto-card">
-                <img src="img/Game1.png" alt="Juego en Unity 3D">
-                <h3>Unity 3D - ObstacleCoeur v.1</h3>
-                <p>A y D en teclado (izquierda para mover a la izquierda, derecha para mover a la derecha), esquiva
-                    obstáculos y demuestra quién tiene más habilidad.</p>
-                <div class="proyecto-links">
-                    <a href="https://lnkd.in/eFkzfptS" class="cta-button" target="_blank"
-                        rel="noopener noreferrer">Jugar <i class="fa-solid fa-gamepad"></i></a>
-
-                </div>
-            </div>
-            <!-- Laboratorio de Física Mecánica -->
-            <div class="proyecto-card">
-                <div style="height:200px;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#172033 0%,#263c59 55%,#f5b700 100%);color:#ffd24a;font-size:4rem;">
-                    <i class="fa-solid fa-helicopter"></i>
-                </div>
-                <h3>Laboratorio de Física Mecánica</h3>
-                <p>Simulador interactivo de un dron de entregas para estudiar fuerzas, masa, empuje, aceleración y movimiento.</p>
-                <p><strong>Actividad 1:</strong> análisis de rutas, despegue y giros mediante MRU, MRUA y MCU.</p>
-                <p><strong>Actividad 2:</strong> diagrama de cuerpo libre, leyes de Newton, equilibrio y registro de ensayos experimentales.</p>
-                <div class="proyecto-links">
-                    <a href="Laboratorio-Dron-Entregas-Actividad2.html" class="cta-button">Abrir simulador <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                </div>
-            </div>
+    <section class="projects section-pad" id="proyectos">
+      <div class="container">
+        <div class="section-heading" data-reveal>
+          <div><p class="eyebrow">01 / DESARROLLO</p><h2>Proyectos <span class="muted-heading">en acción.</span></h2></div>
+          <p class="section-intro">Aplicaciones, sitios y laboratorios interactivos donde el código resuelve algo concreto.</p>
         </div>
+
+        <div class="project-grid">
+          <article class="project-card project-featured" data-reveal>
+            <a class="project-image sim-preview-link" href="Laboratorio-Dron-Entregas-Actividad2.html" aria-label="Abrir el simulador de entregas con drones">
+              <div class="sim-preview">
+                <div class="sim-grid"></div>
+                <div class="sim-route route-one"></div><div class="sim-route route-two"></div>
+                <div class="sim-point point-a">A</div><div class="sim-point point-b">B</div>
+                <div class="sim-drone"><span>✣</span></div>
+                <div class="sim-readout"><span>DRONE LAB / 01</span><b>FLIGHT MECHANICS</b><small>MRU · MRUA · MCU</small></div>
+                <span class="sim-orbit"></span>
+              </div>
+            </a>
+            <div class="project-content">
+              <div class="project-topline"><span class="project-type"><span class="type-dot mint-bg"></span> LABORATORIO INTERACTIVO</span><span class="project-number">01</span></div>
+              <h3>Laboratorio de entregas con drones</h3>
+              <p>Simulador académico para explorar parámetros de vuelo y calcular masa total, peso, empuje, aceleración vertical y movimiento circular.</p>
+              <div class="tag-list"><span>HTML</span><span>JavaScript</span><span>Física mecánica</span></div>
+              <a class="text-link" href="Laboratorio-Dron-Entregas-Actividad2.html">Abrir simulador <span aria-hidden="true">↗</span></a>
+            </div>
+          </article>
+
+          <article class="project-card" data-reveal data-reveal-delay="60">
+            <a class="project-image image-frame" href="https://github.com/lawdv/PortfolioV0" target="_blank" rel="noopener noreferrer" aria-label="Ver proyectos de código en GitHub">
+              <img src="https://raw.githubusercontent.com/lawdv/PortfolioV0/main/img/fullstack.png" alt="Captura de una aplicación de gestión fullstack" loading="lazy">
+              <span class="image-overlay">WEB APP <span>↗</span></span>
+            </a>
+            <div class="project-content">
+              <div class="project-topline"><span class="project-type"><span class="type-dot purple-bg"></span> APLICACIÓN WEB</span><span class="project-number">02</span></div>
+              <h3>Gestión de noticias</h3>
+              <p>Aplicación para consultar, filtrar, buscar y editar información conectando una interfaz web con servicios y datos.</p>
+              <div class="tag-list"><span>Next.js</span><span>TypeScript</span><span>Prisma</span><span>PostgreSQL</span></div>
+              <a class="text-link" href="https://github.com/lawdv/PortfolioV0" target="_blank" rel="noopener noreferrer">Ver en GitHub <span aria-hidden="true">↗</span></a>
+            </div>
+          </article>
+
+          <article class="project-card" data-reveal data-reveal-delay="100">
+            <div class="project-image image-frame">
+              <img src="https://raw.githubusercontent.com/lawdv/PortfolioV0/main/img/Todo.png" alt="Captura de una aplicación de gestión de tareas" loading="lazy">
+              <span class="image-overlay">PRODUCTIVITY <span>↗</span></span>
+            </div>
+            <div class="project-content">
+              <div class="project-topline"><span class="project-type"><span class="type-dot blue-bg"></span> PRODUCTIVIDAD</span><span class="project-number">03</span></div>
+              <h3>Gestión de tareas</h3>
+              <p>Aplicación para organizar tareas con persistencia de datos y una arquitectura web que separa interfaz y backend.</p>
+              <div class="tag-list"><span>React</span><span>Node.js</span><span>Express</span><span>SQL Server</span></div>
+            </div>
+          </article>
+
+          <article class="project-card" data-reveal>
+            <a class="project-image image-frame" href="https://ecocucubo.com.co/" target="_blank" rel="noopener noreferrer" aria-label="Visitar el sitio turístico">
+              <img src="https://raw.githubusercontent.com/lawdv/PortfolioV0/main/img/SitioWeb1.png" alt="Captura de un sitio web turístico" loading="lazy">
+              <span class="image-overlay">LIVE WEBSITE <span>↗</span></span>
+            </a>
+            <div class="project-content">
+              <div class="project-topline"><span class="project-type"><span class="type-dot orange-bg"></span> SITIO WEB</span><span class="project-number">04</span></div>
+              <h3>Experiencia turística</h3>
+              <p>Sitio responsivo para presentar un destino y sus servicios con navegación clara y contenido visual.</p>
+              <div class="tag-list"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
+              <a class="text-link" href="https://ecocucubo.com.co/" target="_blank" rel="noopener noreferrer">Visitar sitio <span aria-hidden="true">↗</span></a>
+            </div>
+          </article>
+
+          <article class="project-card" data-reveal data-reveal-delay="60">
+            <a class="project-image image-frame" href="https://lnkd.in/eFkzfptS" target="_blank" rel="noopener noreferrer" aria-label="Jugar ObstacleCoeur">
+              <img src="https://raw.githubusercontent.com/lawdv/PortfolioV0/main/img/Game1.png" alt="Captura del juego Unity ObstacleCoeur" loading="lazy">
+              <span class="image-overlay">UNITY GAME <span>↗</span></span>
+            </a>
+            <div class="project-content">
+              <div class="project-topline"><span class="project-type"><span class="type-dot pink-bg"></span> VIDEOJUEGO</span><span class="project-number">05</span></div>
+              <h3>ObstacleCoeur</h3>
+              <p>Juego 3D de obstáculos donde el movimiento lateral y los reflejos son la clave para avanzar.</p>
+              <div class="tag-list"><span>Unity</span><span>C#</span><span>Gameplay</span></div>
+              <a class="text-link" href="https://lnkd.in/eFkzfptS" target="_blank" rel="noopener noreferrer">Jugar <span aria-hidden="true">↗</span></a>
+            </div>
+          </article>
+        </div>
+      </div>
     </section>
 
-    <!-- Sobre mi -->
-    <section id="sobre-mi" class="hero">
-        <div class="hero-content">
-            <h1>Sobre Mi</h1>
-            <p>Soy un desarrollador fullstack apasionado por la tecnología, con más de 3 años de experiencia en el
-                desarrollo de soluciones innovadoras. He trabajado en proyectos de automatización de procesos,
-                formularios dinámicos y sitios web, utilizando tecnologías como Python, C#, WinForms, ASP.NET Core y
-                .NET Framework. CSS, HTML, JavaScript, TailwindCSS He desarrollado más de 20 aplicaciones que optimizan procesos mediante web scraping y
-                automatización de tareas, mejorando la eficiencia operativa. Además, participé en el Premio Innova 2022
-                en Colombia junto a GlobalNews Group Colombia S.A.S., destacando mi capacidad para contribuir a
-                proyectos de alto impacto.</p>
-            <div class="proyecto-links">
-                <a href="https://www.premioinnova.gov.co/premio_innova_2022.php" class="cta-button" target="_blank"
-                    rel="noopener noreferrer">Ver participacion</a>
-            </div>
-
+    <section class="games section-pad" id="juegos">
+      <div class="container">
+        <div class="section-heading" data-reveal>
+          <div><p class="eyebrow">02 / DESARROLLO INDIE</p><h2>Mis juegos, <span class="muted-heading">a un clic.</span></h2></div>
+          <p class="section-intro">También creo videojuegos. Explora los prototipos, juega desde el navegador cuando esté disponible y déjame tus comentarios.</p>
         </div>
+
+        <div class="game-grid">
+          <article class="game-card" data-reveal>
+            <a class="game-cover cover-farm" href="https://ixkiraix.itch.io/cozy-cat-farm-v01" target="_blank" rel="noopener noreferrer" aria-label="Jugar Cozy Cat Farm en itch.io">
+              <span class="cover-kicker">A COZY LITTLE WORLD</span>
+              <span class="farm-sun"></span><span class="farm-cloud cloud-one"></span><span class="farm-cloud cloud-two"></span>
+              <span class="farm-hill hill-back"></span><span class="farm-hill hill-front"></span>
+              <span class="farm-cat">🐈</span><span class="farm-sprout sprout-one">🌱</span><span class="farm-sprout sprout-two">🌻</span>
+              <span class="cover-title">Cozy Cat Farm</span><span class="cover-subtitle">plant · grow · harvest</span>
+              <span class="cover-platform">HTML5 · UNITY</span>
+            </a>
+            <div class="game-content">
+              <div class="game-meta"><span>01 / COZY SIM</span><span class="game-status"><i></i> PROTOTIPO</span></div>
+              <h3>Cozy Cat Farm v0.1</h3>
+              <p>Una pequeña experiencia relajada de granja: plantar, regar, cosechar y entregar frutas con una adorable compañía felina.</p>
+              <div class="tag-list"><span>Unity</span><span>Pixel art</span><span>Top-down</span></div>
+              <a class="text-link" href="https://ixkiraix.itch.io/cozy-cat-farm-v01" target="_blank" rel="noopener noreferrer">Jugar en itch.io <span aria-hidden="true">↗</span></a>
+            </div>
+          </article>
+
+          <article class="game-card" data-reveal data-reveal-delay="70">
+            <a class="game-cover cover-survive" href="https://ixkiraix.itch.io/spacecoesurvive" target="_blank" rel="noopener noreferrer" aria-label="Abrir SpaceCoeSurvive en itch.io">
+              <span class="cover-kicker">SIGNAL LOST // 02</span>
+              <span class="space-star ss-one">✦</span><span class="space-star ss-two">·</span><span class="space-star ss-three">+</span>
+              <span class="survive-planet"></span><span class="survive-moon"></span>
+              <span class="survive-ship"><i></i><i></i><i></i></span>
+              <span class="cover-title">SpaceCoeSurvive</span><span class="cover-subtitle">survive the unknown</span>
+              <span class="cover-platform">PLAY IN BROWSER</span>
+            </a>
+            <div class="game-content">
+              <div class="game-meta"><span>02 / SPACE SURVIVAL</span><span class="game-status"><i></i> JUGABLE</span></div>
+              <h3>SpaceCoeSurvive</h3>
+              <p>Una aventura espacial de supervivencia. Explora el proyecto y descubre cuánto puedes resistir en el espacio.</p>
+              <div class="tag-list"><span>Space</span><span>Survival</span><span>Indie</span></div>
+              <a class="text-link" href="https://ixkiraix.itch.io/spacecoesurvive" target="_blank" rel="noopener noreferrer">Ver juego en itch.io <span aria-hidden="true">↗</span></a>
+            </div>
+          </article>
+
+          <article class="game-card" data-reveal data-reveal-delay="140">
+            <a class="game-cover cover-spacecoeur" href="https://ixkiraix.itch.io/spacecoeur" target="_blank" rel="noopener noreferrer" aria-label="Abrir SpaceCoeur en español en itch.io">
+              <span class="cover-kicker">DEEP SPACE / ES</span>
+              <span class="coeur-orbit orbit-a"></span><span class="coeur-orbit orbit-b"></span><span class="coeur-orbit orbit-c"></span>
+              <span class="coeur-planet"></span><span class="coeur-dot"></span>
+              <span class="cover-title">SpaceCoeur</span><span class="cover-subtitle">una aventura entre estrellas</span>
+              <span class="cover-platform">VERSIÓN EN ESPAÑOL</span>
+            </a>
+            <div class="game-content">
+              <div class="game-meta"><span>03 / ESPACIO</span><span class="game-status"><i></i> JUGABLE</span></div>
+              <h3>SpaceCoeur — Español</h3>
+              <p>Una experiencia con temática espacial. Entra a la página del juego para probar la versión en español.</p>
+              <div class="tag-list"><span>Unity</span><span>Space</span><span>Español</span></div>
+              <a class="text-link" href="https://ixkiraix.itch.io/spacecoeur" target="_blank" rel="noopener noreferrer">Ver juego en itch.io <span aria-hidden="true">↗</span></a>
+            </div>
+          </article>
+        </div>
+
+        <a class="itch-outro" href="https://ixkiraix.itch.io/" target="_blank" rel="noopener noreferrer" data-reveal>
+          <span class="itch-outro-icon">i̷</span>
+          <span><b>¿Quieres ver todos mis juegos?</b><small>Visita mi perfil completo en itch.io</small></span>
+          <span class="itch-outro-arrow" aria-hidden="true">↗</span>
+        </a>
+      </div>
     </section>
-    <!-- Sección de Contacto -->
-    <section id="contacto" class="contacto">
-        <h2>Contáctame</h2>
-        <p>¿Tienes un proyecto en mente? ¡Hablemos!</p>
-        <form id="contact-form" action="https://formspree.io/f/xoveglyz" method="POST">
-            <div class="form-group">
-                <label for="nombre">Nombre</label>
-                <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
-            </div>
-            <div class="form-group">
-                <label for="email">Correo Electrónico</label>
-                <input type="email" id="email" name="email" placeholder="tu@correo.com" required>
-            </div>
-            <div class="form-group">
-                <label for="mensaje">Mensaje</label>
-                <textarea id="mensaje" name="mensaje" placeholder="Cuéntame sobre tu proyecto..." required></textarea>
-            </div>
-            <button type="submit" class="cta-button">Enviar Mensaje <i class="fa-solid fa-envelope"></i></button>
+
+    <section class="about section-pad" id="sobre-mi">
+      <div class="container about-grid">
+        <div class="about-heading" data-reveal>
+          <p class="eyebrow">03 / SOBRE MÍ</p>
+          <h2>Curiosidad técnica.<br><span class="muted-heading">Mentalidad creativa.</span></h2>
+          <p>No me quedo solo en que algo funcione: me interesa entender el problema, diseñar una solución clara y mejorarla con cada iteración.</p>
+          <a class="text-link" href="https://github.com/lawdv" target="_blank" rel="noopener noreferrer">Explorar GitHub <span aria-hidden="true">↗</span></a>
+        </div>
+        <div class="about-details" data-reveal data-reveal-delay="90">
+          <div class="detail-row"><span class="detail-index">A</span><div><h3>Desarrollo de software</h3><p>Interfaces, lógica de negocio, APIs y aplicaciones que conectan usuarios con datos.</p></div></div>
+          <div class="detail-row"><span class="detail-index">B</span><div><h3>Automatización</h3><p>Herramientas y flujos que reducen trabajo repetitivo y ordenan procesos.</p></div></div>
+          <div class="detail-row"><span class="detail-index">C</span><div><h3>Creación de videojuegos</h3><p>Prototipos, mecánicas y mundos interactivos desarrollados como proyectos indie.</p></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="stack section-pad" id="habilidades">
+      <div class="container">
+        <div class="section-heading" data-reveal>
+          <div><p class="eyebrow">04 / HERRAMIENTAS</p><h2>Mi caja <span class="muted-heading">de herramientas.</span></h2></div>
+          <p class="section-intro">Tecnologías que he utilizado en aplicaciones, automatizaciones y proyectos personales.</p>
+        </div>
+        <div class="stack-grid" data-reveal>
+          <div class="stack-group"><span class="stack-icon">{ }</span><h3>Lenguajes</h3><div class="stack-pills"><span>C#</span><span>JavaScript</span><span>TypeScript</span><span>Python</span><span>SQL</span></div></div>
+          <div class="stack-group"><span class="stack-icon">⌘</span><h3>Web & Backend</h3><div class="stack-pills"><span>HTML / CSS</span><span>React</span><span>Next.js</span><span>Node.js</span><span>ASP.NET</span><span>Express</span></div></div>
+          <div class="stack-group"><span class="stack-icon">▤</span><h3>Datos & herramientas</h3><div class="stack-pills"><span>PostgreSQL</span><span>SQL Server</span><span>Prisma</span><span>Git / GitHub</span><span>Supabase</span></div></div>
+          <div class="stack-group"><span class="stack-icon">✳</span><h3>Game dev</h3><div class="stack-pills"><span>Unity</span><span>Aseprite</span><span>Diseño de mecánicas</span><span>Prototipado</span></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact section-pad" id="contacto">
+      <div class="container contact-grid">
+        <div class="contact-copy" data-reveal>
+          <p class="eyebrow">05 / CONTACTO</p>
+          <h2>¿Construimos<br><span class="gradient-text">algo interesante?</span></h2>
+          <p>Si tienes una idea, un proyecto o simplemente quieres hablar de desarrollo de software y videojuegos, escríbeme.</p>
+          <div class="social-links">
+            <a href="https://github.com/lawdv" target="_blank" rel="noopener noreferrer">GitHub <span>↗</span></a>
+            <a href="https://ixkiraix.itch.io/" target="_blank" rel="noopener noreferrer">itch.io <span>↗</span></a>
+            <a href="https://www.linkedin.com/in/javiercorteslawdv/" target="_blank" rel="noopener noreferrer">LinkedIn <span>↗</span></a>
+          </div>
+        </div>
+        <form class="contact-form" id="contact-form" action="https://formspree.io/f/xoveglyz" method="POST" data-reveal data-reveal-delay="100">
+          <label for="nombre">Tu nombre</label>
+          <input type="text" id="nombre" name="nombre" placeholder="¿Cómo te llamas?" autocomplete="name" required>
+          <label for="email">Correo electrónico</label>
+          <input type="email" id="email" name="email" placeholder="tu@correo.com" autocomplete="email" required>
+          <label for="mensaje">¿En qué estás pensando?</label>
+          <textarea id="mensaje" name="mensaje" placeholder="Cuéntame un poco sobre tu idea..." rows="4" required></textarea>
+          <button type="submit" class="btn btn-primary form-submit">Enviar mensaje <span aria-hidden="true">↗</span></button>
+          <p class="form-note">El formulario utiliza el servicio de envío configurado previamente.</p>
         </form>
-        <div id="modal" class="modal">
-            <div class="modal-content">
-                <span id="modal-close" class="modal-close">&times;</span>
-                <h3 id="modal-title"></h3>
-                <p id="modal-message"></p>
-            </div>
-        </div>
+      </div>
     </section>
+  </main>
 
-    <script src="script.js"></script>
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <a class="brand footer-brand" href="#inicio"><span class="brand-mark">L<span>.</span></span><span class="brand-name">lawdv<span class="brand-slash">/</span>dev</span></a>
+      <p>Diseñado y construido con curiosidad desde Colombia.</p>
+      <span class="footer-copy">© <span id="year">2026</span> lawdv</span>
+    </div>
+  </footer>
+  <script src="script.js"></script>
 </body>
-
 </html>
